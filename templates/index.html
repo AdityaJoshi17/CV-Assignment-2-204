@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transformations</title>
+    <link rel="stylesheet" href="static/css/style.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Transformation Tool</h1>
+            <p>Upload an image to apply transformations</p>
+        </header>
+
+        <div class="upload-form">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Apply Transformations</button>
+            </form>
+        </div>
+
+        {% if transformed_image %}
+        <div class="result">
+            <h2>Transformed Image</h2>
+            <img src="{{ transformed_image }}" alt="Transformed Image">
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Image Transformation Tool | Aditya Joshi | 204 </p>
+    </footer>
+</body>
+</html>
